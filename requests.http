@@ -1,0 +1,15 @@
+### Отримати всі документи
+GET http://localhost:3000/documents
+
+### Отримати всіх співробітників
+GET http://localhost:3000/employees
+
+### Створити новий документ
+POST http://localhost:3000/documents
+Content-Type: application/json
+
+{
+  "title": "Q3 Financial Report",
+  "content": "The financial results for Q3 are positive."
+}
+
