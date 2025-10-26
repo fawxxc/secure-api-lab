@@ -12,4 +12,20 @@ Content-Type: application/json
   "title": "Q3 Financial Report",
   "content": "The financial results for Q3 are positive."
 }
+### Сценарій 1 (Немає доступу):
+GET http://localhost:3000/documents
 
+### Сценарій 2 (Доступ для user):
+GET http://localhost:3000/documents
+X-Login: user1
+X-Password: password123
+
+### Сценарій 3: Заборона для user1
+GET http://localhost:3000/employees
+X-Login: user1
+X-Password: password123
+
+### Сценарій 4: Доступ для admin1
+GET http://localhost:3000/employees
+X-Login: admin1
+X-Password: password123
