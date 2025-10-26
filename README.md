@@ -99,8 +99,20 @@ curl -X GET http://localhost:3000/documents \
 ```
 
 ---
+## Тестування API
 
+Нижче наведені основні сценарії запитів до API та очікувані відповіді. Скриншоти демонструють роботу в Postman.
+
+| № | Сценарій | Запит | Заголовки | Тіло запиту | Очікувана відповідь | Скриншот |
+|---|----------|-------|-----------|------------|-------------------|-----------|
+| 1 | 401 Unauthorized | GET /documents | – | – | 401 Unauthorized | ![401](docs/401Unauthorized.png) |
+| 2 | 200 OK | GET /documents | Authorization: Bearer <user1-token> | – | 200 OK, список документів | ![200](docs/200OK.png) |
+| 3 | 403 Forbidden | GET /employees | Authorization: Bearer <user1-token> | – | 403 Forbidden | ![403](docs/403Forbidden.png) |
+| 4 | 400 Bad Request | POST /documents | Authorization: Bearer <user1-token><br>Content-Type: application/json | ```json { "title": "Невірні дані" } ``` | 400 Bad Request / Validation Error | ![400](docs/400BadRequest.png) |
+| 5 | 404 Not Found | GET /non-existent | будь-які | – | 404 Not Found | ![404](docs/404NotFound.png) |
+---
 ## Посилання
 
 Репозиторій: [https://github.com/fawxxc/secure-api-lab.git](https://github.com/fawxxc/secure-api-lab.git)
 ---
+
