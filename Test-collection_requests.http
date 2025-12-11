@@ -39,7 +39,7 @@ X-Password: password123
 
 ###
 
-### 6. Помилка валідації (відсутнє поле title)
+### 6. Помилка валідації 
 # Очікуємо: 400 Bad Request
 POST http://localhost:3000/documents
 Content-Type: application/json
@@ -53,7 +53,6 @@ X-Password: password123
 ###
 
 ### 7. Успішне видалення
-# ПРИМІТКА: Переконайтеся, що документ з id=1 існує (або замініть на id з GET /documents)
 # Очікуємо: 204 No Content
 DELETE http://localhost:3000/documents/1
 X-Login: admin1
